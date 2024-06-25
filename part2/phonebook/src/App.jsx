@@ -98,7 +98,7 @@ const App = () => {
   const handleDelete = (person) => {
     if (window.confirm(`Delete ${person.name} ?`)) {
       phonebookService.remove(person.id).then((deletedPerson) => {
-        setPersons(persons.filter((person) => person.id !== deletedPerson.id));
+        setPersons(persons.filter((p) => p.id !== person.id));
         setErrorMessage(`${person.name} has been successfully deleted.`);
         setErrorOp(false)
         setTimeout(() => {
