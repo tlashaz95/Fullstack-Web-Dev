@@ -61,7 +61,7 @@ const App = () => {
         }, 5000);
       })
       .catch(error => {
-        setErrorMessage(`${error} in updating the ${personObj.name} phone number`)
+        setErrorMessage(`Error in updating the ${personObj.name} phone number. Details: ${error.response.data.error}`)
         setErrorOp(false)
       })
     } else {
@@ -74,7 +74,7 @@ const App = () => {
         }, 5000);
       })
       .catch(error => {
-        setErrorMessage(`${error} in adding a new Person`)
+        setErrorMessage(`Error in adding a new Person. Details: ${error.response.data.error}`)
         setErrorOp(false)
       })
     }
